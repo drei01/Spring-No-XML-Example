@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans  xmlns="http://www.springframework.org/schema/security"
+  xmlns:beans="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->	
+	
+	<!-- Spring security -->
+	<global-method-security secured-annotations="enabled"></global-method-security>
+	
+    <http use-expressions="true">
+        <intercept-url pattern="/" access="permitAll"/>
+        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
+        <http-basic/>
+    </http>
+ 
+    <!--
+    admin authentication 
+    -->
+    <authentication-manager>
+    	<authentication-provider>
+        	<password-encoder hash="sha-256"/>
+        	<user-service>
+            	<user name="codefish" password="78837abff023e7aefedfadaf4b7d4ad8cec1f23a01a1c8b3a060099102ad62a0" authorities="ROLE_ADMIN" />
+	    	</user-service>
+		</authentication-provider>
+	</authentication-manager>
+</beans:beans>

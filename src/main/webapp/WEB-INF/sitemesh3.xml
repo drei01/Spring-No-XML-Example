@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+  <mapping path="/*" decorator="/decorator/decorator.jsp"/>
+  <mapping path="/error/*" decorator="/decorator/decorator.jsp" exclude="true"/>
+  <mapping path="*.json" decorator="/decorator/decorator.jsp" exclude="true"/>
+</sitemesh>
