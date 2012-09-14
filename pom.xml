@@ -284,42 +284,6 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-			  <groupId>com.jelastic</groupId>
-			  <artifactId>jelastic-maven-plugin</artifactId>
-			  <version>[1.5,)</version>
-			  <configuration>
-			     <email>${jelastic.username}</email>
-			     <password>${jelastic.password}</password>
-			     <context>${jelastic_context}</context>
-			     <environment>${jelastic_environment}</environment>
-			     <api_hoster>api.jelastic.com</api_hoster>
-			  </configuration>
-			 </plugin>
 		</plugins>
 	</build>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>sonatype-oss-public</id>
-			<url>https://oss.sonatype.org/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	<profiles>
-		<profile>
-			<id>jelastic</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<jelastic.username>${jelastic_username}</jelastic.username>
-				<jelastic.password>${jelastic_password}</jelastic.password>
-			</properties>
-		</profile>
-	</profiles>
 </project>
