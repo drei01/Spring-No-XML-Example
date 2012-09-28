@@ -21,7 +21,7 @@ public class SpringMongoConfig extends AbstractMongoConfiguration{
 	@Override
 	@Bean
 	public Mongo mongo() throws Exception {
-		return new Mongo("localhost");
+		return new Mongo("mongodb-codefish.j.layershift.co.uk");
 	}
  
 	@Override
