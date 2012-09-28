@@ -3,6 +3,7 @@ package org.codefish.spring.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.authentication.UserCredentials;
 import org.springframework.data.document.mongodb.MongoTemplate;
 import org.springframework.data.document.mongodb.config.AbstractMongoConfiguration;
 
@@ -26,7 +27,7 @@ public class SpringMongoConfig extends AbstractMongoConfiguration{
 	@Override
 	@Bean
 	public MongoTemplate mongoTemplate() throws Exception {
-		MongoTemplate mongoTemplate = new MongoTemplate(mongo(), databaseName);
+		MongoTemplate mongoTemplate = new MongoTemplate(mongo(), databaseName, new UserCredentials("admin", "CGee6PPjO2"));
 		return mongoTemplate;
 	}
 	
