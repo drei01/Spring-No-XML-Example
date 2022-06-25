@@ -11,7 +11,7 @@
 		<org.springframework-version>5.2.9.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
-		<spring-data-version>1.0.0.M3</spring-data-version>
+		<spring-data-version>3.3.5</spring-data-version>
 	</properties>
 	<repositories>
 		<!-- For testing against latest Spring snapshots -->
